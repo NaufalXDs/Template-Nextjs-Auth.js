@@ -23,11 +23,11 @@ This is a template project for Next.js with authentication setup using auth.js. 
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/NaufalXDs/Template-Nextjs-Auth.js.git
 ```
 2. Navigate into the project directory:
 ```sh
-cd your-repo-name
+cd Template-Nextjs-Auth.js
 ```
 3. Install the dependencies:
 ```sh
