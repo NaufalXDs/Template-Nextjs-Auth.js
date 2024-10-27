@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Auth Template
+
+This is a template project for Next.js with authentication setup using auth.js. It includes Prisma for database management and several npm scripts for development and deployment.
+
+## Features
+
+- **Email Verification** powered by [resend.dev](https://resend.dev/)
+- **Password Reset**
+- **User Registration**
+- **User Login**
+- **Token Verification on Login**
+- **OAuth Login with Google and GitHub**
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js (v14.x or higher)
+- npm or yarn
+- A PostgreSQL database (or another database supported by Prisma)
+
+### Installation
+
+1. Clone the repository:
+```sh
+git clone https://github.com/your-username/your-repo-name.git
+```
+2. Navigate into the project directory:
+```sh
+cd your-repo-name
+```
+3. Install the dependencies:
+```sh
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root of the project and add the following environment variables:
+
+```
+DATABASE_URL=your_database_url
+NEXTAUTH_URL=http://localhost:3000
+RESEND_API_KEY=your_resend_api_key
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+```
+
+### Database Setup
+
+1. Pull the database schema:
+```sh
+npm run db:pull
+```
+2. Push the database schema to ensure it is updated:
+```sh
+npm run db:push
+```
+3. Generate the Prisma client:
+```sh
+npm run dev:gen
+```
+
+### Running the Development Server
+
+Start the development server:
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
+```sh
+npm run build
+```
 
-## Learn More
+To start the production server:
+```sh
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Running Migrations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To create a new migration file and apply it to the database:
+```sh
+npm run db:migrate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Scripts
 
-## Deploy on Vercel
+- `dev`: Starts the development server using Turbopack.
+- `dev:gen`: Generates the Prisma client.
+- `db:pull`: Pulls the database schema.
+- `db:push`: Pushes the current state of your Prisma schema to your database.
+- `db:migrate`: Creates and applies a new migration.
+- `build`: Builds the Next.js application for production.
+- `start`: Starts the Next.js application in production mode.
+- `lint`: Runs Next.js' linting.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Features Overview
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Email Verification:** Uses resend.dev for sending email verification links during the registration process.
+- **Password Reset:** Allows users to reset their password if they forget it.
+- **User Registration:** New users can create an account by providing necessary details.
+- **User Login:** Users can log in using their registered email and password.
+- **Token Verification on Login:** Verifies tokens to ensure secure authentication during login.
+- **OAuth Login:** Users can log in using their Google or GitHub accounts.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [Prisma](https://www.prisma.io/)
+- [auth.js](https://authjs.dev/)
+- [resend.dev](https://resend.dev/)
+- [Google OAuth](https://developers.google.com/identity/protocols/oauth2)
+- [GitHub OAuth](https://docs.github.com/en/developers/apps/building-oauth-apps)

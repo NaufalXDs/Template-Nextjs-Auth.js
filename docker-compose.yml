@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: bitnami/mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: template-project12345
+      MYSQL_DATABASE: template-project-db
+      MYSQL_USER: template-project-user
+      MYSQL_PASSWORD: template-project-1234
+    ports:
+      - "3308:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
