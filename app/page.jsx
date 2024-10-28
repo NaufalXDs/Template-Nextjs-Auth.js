@@ -2,6 +2,7 @@ import Image from "next/image";
 import { currentUser } from "@/lib/auth";
 import { LogoutBtn } from "@/components/auth/logout-btn";
 import { LoginBtn } from "@/components/auth/login_btn";
+
 export default async function Home() {
   const users = await currentUser();
   return (
