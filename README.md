@@ -17,7 +17,7 @@ This is a template project for Next.js with authentication setup using auth.js. 
 
 - Node.js (v14.x or higher)
 - npm
-- A PostgreSQL database (or another database supported by Prisma)
+- A Mysql database (or another database supported by Prisma)
 
 ### Installation
 
